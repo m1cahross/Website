@@ -1,0 +1,172 @@
+.hero {
+  text-align: center;
+  padding: 52px 48px 20px;
+}
+
+.heroHeadline {
+  font-weight: 900;
+  font-size: clamp(4.5rem, 10vw, 8.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: var(--black);
+  display: block;
+}
+
+.heroSub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.wontLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.wontArrow {
+  font-size: 3rem;
+  color: var(--black);
+  display: block;
+  transform: rotate(15deg);
+  transition: transform 0.2s;
+  line-height: 1;
+}
+
+.wontLink:hover .wontArrow { transform: rotate(25deg) scale(1.1); }
+
+.wontText {
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--black);
+  padding-bottom: 3px;
+}
+
+.wontText::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 0;
+  background: var(--black);
+  transition: width 0.25s ease;
+  margin-top: 2px;
+}
+
+.wontLink:hover .wontText::after { width: 100%; }
+
+.boxesWrapper {
+  padding: 32px 48px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.boxesRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.problemCard {
+  background: var(--gray);
+  padding: 36px 28px;
+  text-align: center;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  line-height: 1.15;
+  color: var(--black);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: color 0.2s, transform 0.18s, box-shadow 0.18s;
+  flex: 1;
+  min-height: 160px;
+  position: relative;
+  overflow: hidden;
+}
+
+.problemCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--purple-grad);
+  opacity: 0;
+  transition: opacity 0.2s;
+  border-radius: 12px;
+}
+
+.problemCard:hover::before { opacity: 1; }
+.problemCard:hover {
+  color: var(--white);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(91, 0, 224, 0.25);
+}
+
+.cardDefault,
+.cardHover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 20px;
+  transition: opacity 0.25s ease;
+  z-index: 1;
+  text-align: center;
+}
+
+.cardHover {
+  opacity: 0;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 900;
+}
+
+.problemCard:hover .cardDefault { opacity: 0; }
+.problemCard:hover .cardHover   { opacity: 1; }
+
+.ctaBar {
+  text-align: center;
+  padding: 48px 48px 64px;
+}
+
+.ctaBar a {
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.ctaBar a:hover { opacity: 0.7; }
+
+.ctaBlack { color: var(--black); }
+
+.ctaPurple {
+  background: var(--purple-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-bottom: 3px solid var(--purple-light);
+  padding-bottom: 4px;
+}
+
+@media (max-width: 900px) {
+  .hero { padding: 36px 24px 16px; }
+  .wontText { font-size: 1.4rem; }
+  .wontArrow { font-size: 2.2rem; }
+  .boxesWrapper { padding: 24px 24px 0; }
+  .boxesRow { gap: 12px; }
+  .problemCard { font-size: 1.2rem; padding: 28px 16px; min-height: 130px; }
+}
+
+@media (max-width: 600px) {
+  .heroHeadline { font-size: 3.5rem; }
+  .boxesRow { flex-direction: column; }
+  .problemCard { min-height: 100px; }
+}
