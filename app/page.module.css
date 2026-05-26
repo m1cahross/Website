@@ -58,6 +58,7 @@
 
 .wontLink:hover .wontText::after { width: 100%; }
 
+/* ── CARDS ── */
 .boxesWrapper {
   padding: 32px 48px 0;
   max-width: 1200px;
@@ -131,6 +132,7 @@
 .problemCard:hover .cardDefault { opacity: 0; }
 .problemCard:hover .cardHover   { opacity: 1; }
 
+/* ── CTA ── */
 .ctaBar {
   text-align: center;
   padding: 48px 48px 64px;
@@ -156,6 +158,7 @@
   padding-bottom: 4px;
 }
 
+/* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .hero { padding: 36px 24px 16px; }
   .wontText { font-size: 1.4rem; }
